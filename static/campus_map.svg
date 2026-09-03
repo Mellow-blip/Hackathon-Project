@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+  <!-- Background -->
+  <rect width="800" height="520" fill="#fafafa" stroke="#8b0000" stroke-width="2" rx="6"/>
+
+  <!-- Building Title -->
+  <text x="400" y="32" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#8b0000">CET Building — Floor Plan</text>
+
+  <!-- Hallway -->
+  <rect x="50" y="210" width="700" height="70" fill="#ffc107" stroke="#8b0000" stroke-width="1" rx="4"/>
+  <text x="400" y="250" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#5c0000">HALLWAY</text>
+
+  <!-- ═══ Top row ═══ -->
+
+  <!-- CpE Lab -->
+  <rect id="cpe-lab" x="60" y="55" width="200" height="135" rx="6" fill="#ef4444" stroke="#5c0000" stroke-width="2" cursor="pointer"/>
+  <text x="160" y="115" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" pointer-events="none">CpE Lab</text>
+  <text x="160" y="138" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#fde8e8" pointer-events="none">Computer Eng. Lab</text>
+
+  <!-- CET 101 -->
+  <rect id="cet-101" x="290" y="55" width="200" height="135" rx="6" fill="#10b981" stroke="#5c0000" stroke-width="2" cursor="pointer"/>
+  <text x="390" y="115" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" pointer-events="none">CET 101</text>
+  <text x="390" y="138" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d1fae5" pointer-events="none">Lecture Room 101</text>
+
+  <!-- CET 102 -->
+  <rect id="cet-102" x="520" y="55" width="200" height="135" rx="6" fill="#ef4444" stroke="#5c0000" stroke-width="2" cursor="pointer"/>
+  <text x="620" y="115" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" pointer-events="none">CET 102</text>
+  <text x="620" y="138" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#fde8e8" pointer-events="none">Lecture Room 102</text>
+
+  <!-- ═══ Bottom row ═══ -->
+
+  <!-- Circuits Lab -->
+  <rect id="circuits-lab" x="120" y="300" width="220" height="135" rx="6" fill="#10b981" stroke="#5c0000" stroke-width="2" cursor="pointer"/>
+  <text x="230" y="360" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" pointer-events="none">Circuits Lab</text>
+  <text x="230" y="383" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d1fae5" pointer-events="none">Electrical Lab</text>
+
+  <!-- Dean's Office -->
+  <rect id="deans-office" x="400" y="300" width="220" height="135" rx="6" fill="#ef4444" stroke="#5c0000" stroke-width="2" cursor="pointer"/>
+  <text x="510" y="360" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" pointer-events="none">Dean's Office</text>
+  <text x="510" y="383" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#fde8e8" pointer-events="none">CET Admin Office</text>
+</svg>
