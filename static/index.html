@@ -17,7 +17,18 @@
       justify-content: space-between;
     }
     .top-bar h1 { color: #fff; font-size: 1.2rem; }
-    .top-bar span { color: #ddd; font-size: 0.85rem; }
+    .top-bar .user-info { display: flex; align-items: center; gap: 12px; }
+    .top-bar .user-info span { color: #ddd; font-size: 0.85rem; }
+    .top-bar .role-badge {
+      background: #ffc107; color: #5c0000; padding: 3px 10px;
+      border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase;
+    }
+    .top-bar .btn-logout {
+      background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+      padding: 5px 14px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .top-bar .btn-logout:hover { background: rgba(255,255,255,0.3); }
 
     /* ── Nav bar ──────────────────────────────────────────── */
     .nav-bar {
@@ -73,7 +84,7 @@
 
     /* ── Side panel ──────────────────────────────────────── */
     .side-panel {
-      width: 340px;
+      width: 370px;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -124,6 +135,8 @@
       border-radius: 8px;
       border: 1px solid #ccc;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      max-height: 70vh;
+      overflow-y: auto;
     }
     .drawer h2 { color: #8b0000; font-size: 1rem; margin-bottom: 0.5rem; }
     .drawer h3 { font-size: 0.9rem; color: #374151; margin: 0.8rem 0 0.3rem; }
@@ -132,13 +145,15 @@
     .drawer .empty { color: #6b7280; font-size: 0.85rem; font-style: italic; }
 
     .drawer form { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-    .drawer input {
+    .drawer input, .drawer textarea {
       padding: 8px 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 13px;
+      font-family: inherit;
     }
-    .drawer input:focus { border-color: #8b0000; outline: none; }
+    .drawer input:focus, .drawer textarea:focus { border-color: #8b0000; outline: none; }
+    .drawer textarea { resize: vertical; min-height: 60px; }
 
     .btn {
       padding: 8px 14px;
@@ -153,6 +168,9 @@
     .btn-primary:hover { background: #5c0000; }
     .btn-toggle { background: #374151; color: #fff; float: right; font-size: 0.75rem; padding: 5px 10px; }
     .btn-toggle:hover { background: #1f2937; }
+    .btn-sm { padding: 4px 10px; font-size: 0.75rem; }
+    .btn-danger { background: #ef4444; color: #fff; }
+    .btn-danger:hover { background: #dc2626; }
 
     /* ── Notes ────────────────────────────────────────────── */
     .notes-section { margin-top: 0.6rem; }
@@ -174,50 +192,192 @@
     .btn-note-del:hover { background: #c62828; color: #fff; }
     .note-status { font-size: 0.75rem; color: #2e7d32; margin-top: 4px; min-height: 1em; }
 
+    /* ── Public note card ────────────────────────────────── */
+    .public-note {
+      background: #fffbeb;
+      border: 1px solid #fbbf24;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 0.83rem;
+    }
+    .public-note .note-meta {
+      font-size: 0.72rem;
+      color: #92400e;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .public-note .note-text { color: #451a03; line-height: 1.5; }
+
+    /* ── Login screen ────────────────────────────────────── */
+    .login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #5c0000 0%, #8b0000 50%, #2b0000 100%);
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      text-align: center;
+      max-width: 440px;
+      width: 90%;
+    }
+    .login-card h1 { color: #8b0000; font-size: 1.6rem; margin-bottom: 0.3rem; }
+    .login-card p { color: #6b7280; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .login-card .name-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .login-card .name-input:focus { border-color: #8b0000; outline: none; }
+    .login-card .role-buttons { display: flex; gap: 1rem; }
+    .role-btn {
+      flex: 1;
+      padding: 1.2rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .role-btn:hover { border-color: #8b0000; background: #fef2f2; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(139,0,0,.15); }
+    .role-btn .icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+    .role-btn .label { font-weight: 700; font-size: 1rem; color: #1f2937; display: block; }
+    .role-btn .desc { font-size: 0.75rem; color: #6b7280; display: block; margin-top: 4px; }
+    .login-error { color: #ef4444; font-size: 0.8rem; margin-bottom: 1rem; min-height: 1.2em; }
+
     .hidden { display: none; }
     .note-dot { pointer-events: none; }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <h1>🏫 MSEUF CET Building Navigator</h1>
-    <span>Good day! :)</span>
-  </div>
-  <div class="nav-bar">Real-Time Room Availability &amp; Schedule Tracker</div>
-  <div class="page-heading">
-    <h2>⏱ Room Status Overview</h2>
-    <div class="legend">
-      <span><span class="legend-dot" style="background:#ef4444;"></span> Occupied</span>
-      <span><span class="legend-dot" style="background:#10b981;"></span> Vacant</span>
-      <span><span class="legend-dot" style="background:#ffc107; border:1px solid #8b0000;"></span> Has Notes</span>
+  <!-- ═══════════ LOGIN SCREEN ═══════════ -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <h1>🏫 MSEUF CET Navigator</h1>
+      <p>Room Availability & Schedule Tracker</p>
+      <input class="name-input" type="text" id="login-name" placeholder="Enter your name..." />
+      <div class="login-error" id="login-error"></div>
+      <p style="font-size:0.85rem; color:#374151; margin-bottom:0.8rem; font-weight:600;">I am a…</p>
+      <div class="role-buttons">
+        <button class="role-btn" onclick="doLogin('teacher')">
+          <span class="icon">👨‍🏫</span>
+          <span class="label">Teacher</span>
+          <span class="desc">Manage rooms, schedules & post reminders</span>
+        </button>
+        <button class="role-btn" onclick="doLogin('student')">
+          <span class="icon">🎓</span>
+          <span class="label">Student</span>
+          <span class="desc">View schedules, rooms & teacher reminders</span>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="main">
-    <!-- ── Map ──────────────────────────────────────── -->
-    <div class="map-container" id="map-container"></div>
+  <!-- ═══════════ MAIN APP (hidden until login) ═══════════ -->
+  <div id="app-screen" class="hidden">
+    <div class="top-bar">
+      <h1>🏫 MSEUF CET Building Navigator</h1>
+      <div class="user-info">
+        <span id="user-greeting"></span>
+        <span class="role-badge" id="role-badge"></span>
+        <button class="btn-logout" onclick="doLogout()">Logout</button>
+      </div>
+    </div>
+    <div class="nav-bar">Real-Time Room Availability &amp; Schedule Tracker</div>
+    <div class="page-heading">
+      <h2>⏱ Room Status Overview</h2>
+      <div class="legend">
+        <span><span class="legend-dot" style="background:#ef4444;"></span> Occupied</span>
+        <span><span class="legend-dot" style="background:#10b981;"></span> Vacant</span>
+        <span><span class="legend-dot" style="background:#ffc107; border:1px solid #8b0000;"></span> Has Notes</span>
+      </div>
+    </div>
 
-    <!-- ── Side panel ───────────────────────────────── -->
-    <div class="side-panel">
-      <input class="search-box" type="text" id="search" placeholder="Search rooms (e.g., CpE Lab, CET 101)..." />
+    <div class="main">
+      <!-- ── Map ──────────────────────────────────────── -->
+      <div class="map-container" id="map-container"></div>
 
-      <div class="cards" id="card-list"></div>
-
-      <div class="drawer hidden" id="drawer"></div>
+      <!-- ── Side panel ───────────────────────────────── -->
+      <div class="side-panel">
+        <input class="search-box" type="text" id="search" placeholder="Search rooms (e.g., CpE Lab, CET 101)..." />
+        <div class="cards" id="card-list"></div>
+        <div class="drawer hidden" id="drawer"></div>
+      </div>
     </div>
   </div>
 
   <script>
+    // ── State ──────────────────────────────────────────────
     let rooms = [];
     let selectedRoomId = null;
+    let currentUser = null; // { role, name }
+    let publicNotesCache = {}; // room_id -> [notes]
     const ROOM_IDS = ["cpe-lab", "cet-101", "cet-102", "circuits-lab", "deans-office"];
     const OCCUPIED_COLOR = "#ef4444";
     const VACANT_COLOR   = "#10b981";
     const SELECTED_STROKE = "#ffc107";
 
-    // ── 1. Load data ────────────────────────────────────────
-    async function init() {
+    // ── Auth ──────────────────────────────────────────────
+    async function checkSession() {
+      const res = await fetch("/api/me");
+      const data = await res.json();
+      if (data.logged_in) {
+        currentUser = { role: data.role, name: data.name };
+        showApp();
+      }
+    }
+    checkSession();
+
+    async function doLogin(role) {
+      const name = document.getElementById("login-name").value.trim();
+      const errEl = document.getElementById("login-error");
+      if (!name) { errEl.textContent = "Please enter your name."; return; }
+      errEl.textContent = "";
+
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ role, name }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        currentUser = { role: data.role, name: data.name };
+        showApp();
+      } else {
+        errEl.textContent = data.error || "Login failed.";
+      }
+    }
+
+    async function doLogout() {
+      await fetch("/api/logout", { method: "POST" });
+      currentUser = null;
+      selectedRoomId = null;
+      document.getElementById("app-screen").classList.add("hidden");
+      document.getElementById("login-screen").classList.remove("hidden");
+      document.getElementById("login-name").value = "";
+    }
+
+    // ── Show App ──────────────────────────────────────────
+    async function showApp() {
+      document.getElementById("login-screen").classList.add("hidden");
+      document.getElementById("app-screen").classList.remove("hidden");
+      document.getElementById("user-greeting").textContent = `Hello, ${currentUser.name}!`;
+      document.getElementById("role-badge").textContent = currentUser.role;
+
       const [roomsRes] = await Promise.all([
         fetch("/api/rooms").then(r => r.json()),
         fetch("/static/campus_map.svg").then(r => r.text()).then(svg => {
@@ -230,12 +390,14 @@
       colorMapRooms();
       renderNoteDots();
     }
-    init();
 
-    // ── 2. Search ───────────────────────────────────────────
+    // ── Helpers ───────────────────────────────────────────
+    function isTeacher() { return currentUser && currentUser.role === "teacher"; }
+
+    // ── Search ────────────────────────────────────────────
     document.getElementById("search").addEventListener("input", renderCards);
 
-    // ── 3. Render room cards ────────────────────────────────
+    // ── Render room cards ─────────────────────────────────
     function renderCards() {
       const query = document.getElementById("search").value.toLowerCase();
       const list = document.getElementById("card-list");
@@ -257,7 +419,7 @@
         });
     }
 
-    // ── 4. Map interactions ─────────────────────────────────
+    // ── Map interactions ──────────────────────────────────
     function wireMapClicks() {
       ROOM_IDS.forEach(id => {
         const el = document.getElementById(id);
@@ -275,16 +437,23 @@
       });
     }
 
-    // ── 5. Select a room (from card OR map) ─────────────────
-    function selectRoom(id) {
+    // ── Select a room ─────────────────────────────────────
+    async function selectRoom(id) {
       selectedRoomId = id;
       const room = rooms.find(r => r.id === id);
       colorMapRooms();
       renderCards();
+
+      // Fetch public notes for this room
+      try {
+        const res = await fetch("/api/rooms/" + id + "/public-notes");
+        publicNotesCache[id] = await res.json();
+      } catch { publicNotesCache[id] = []; }
+
       showDrawer(room);
     }
 
-    // ── 6. Detail drawer ────────────────────────────────────
+    // ── Detail drawer ─────────────────────────────────────
     function showDrawer(room) {
       const drawer = document.getElementById("drawer");
       drawer.classList.remove("hidden");
@@ -295,27 +464,79 @@
             `<li><strong>${s.time}</strong> — ${s.subject} (${s.prof})</li>`
           ).join("") + "</ul>";
 
-      const savedNote = localStorage.getItem("note_" + room.id) || "";
+      const savedNote = localStorage.getItem("note_" + currentUser.role + "_" + room.id) || "";
 
-      drawer.innerHTML = `
-        <button class="btn btn-toggle" onclick="toggleStatus('${room.id}')">
-          Set as ${room.status === "Vacant" ? "Occupied" : "Vacant"}
-        </button>
+      // Public notes
+      const pNotes = publicNotesCache[room.id] || [];
+      let publicNotesHTML = "";
+      if (pNotes.length === 0) {
+        publicNotesHTML = '<p class="empty">No reminders posted yet.</p>';
+      } else {
+        publicNotesHTML = pNotes.map((n, i) => `
+          <div class="public-note">
+            <div class="note-meta">
+              <span>📌 ${n.author} · ${n.timestamp}</span>
+              ${isTeacher() ? `<button class="btn btn-sm btn-danger" onclick="deletePublicNote('${room.id}', ${i})">✕</button>` : ""}
+            </div>
+            <div class="note-text">${escapeHtml(n.text)}</div>
+          </div>
+        `).join("");
+      }
+
+      // ── Build drawer based on role ──
+      let html = "";
+
+      // Toggle button (teacher only)
+      if (isTeacher()) {
+        html += `
+          <button class="btn btn-toggle" onclick="toggleStatus('${room.id}')">
+            Set as ${room.status === "Vacant" ? "Occupied" : "Vacant"}
+          </button>`;
+      }
+
+      // Room header + schedule (both roles)
+      html += `
         <h2>${room.code} — Details</h2>
         <p class="sub">${room.name}</p>
-
         <h3>📋 Today's Schedule</h3>
         ${scheduleHTML}
+      `;
 
-        <hr />
-        <h3>➕ Add Class Schedule</h3>
-        <form onsubmit="addSchedule(event)">
-          <input type="text" id="inp-sub"  placeholder="Subject (e.g. CPE 421 - Microprocessors)" required />
-          <input type="text" id="inp-prof" placeholder="Instructor Name" required />
-          <input type="text" id="inp-time" placeholder="Time Slot (e.g. 01:00 PM - 03:00 PM)" required />
-          <button type="submit" class="btn btn-primary">Save Schedule</button>
-        </form>
+      // Add schedule form (teacher only)
+      if (isTeacher()) {
+        html += `
+          <hr />
+          <h3>➕ Add Class Schedule</h3>
+          <form onsubmit="addSchedule(event)">
+            <input type="text" id="inp-sub"  placeholder="Subject (e.g. CPE 421 - Microprocessors)" required />
+            <input type="text" id="inp-prof" placeholder="Instructor Name" required />
+            <input type="text" id="inp-time" placeholder="Time Slot (e.g. 01:00 PM - 03:00 PM)" required />
+            <button type="submit" class="btn btn-primary">Save Schedule</button>
+          </form>
+        `;
+      }
 
+      // Public notes section
+      html += `<hr />`;
+      if (isTeacher()) {
+        html += `
+          <h3>📢 Public Reminders</h3>
+          <p style="font-size:0.75rem; color:#6b7280; margin-bottom:6px;">Visible to all students</p>
+          ${publicNotesHTML}
+          <div style="margin-top:8px;">
+            <textarea id="public-note-text" placeholder="Write a reminder for students…" style="width:100%; min-height:60px; border:1px solid #ccc; border-radius:6px; padding:8px; font-family:inherit; font-size:0.8rem;"></textarea>
+            <button class="btn btn-primary" style="margin-top:6px;" onclick="addPublicNote('${room.id}')">Post Reminder</button>
+          </div>
+        `;
+      } else {
+        html += `
+          <h3>📢 Teacher Reminders</h3>
+          ${publicNotesHTML}
+        `;
+      }
+
+      // Private notes (both roles)
+      html += `
         <hr />
         <div class="notes-section">
           <h3>🔒 My Private Notes</h3>
@@ -327,11 +548,21 @@
           <div class="note-status" id="note-status"></div>
         </div>
       `;
+
+      drawer.innerHTML = html;
     }
 
-    // ── 7. Toggle status ────────────────────────────────────
+    // ── Escape HTML ───────────────────────────────────────
+    function escapeHtml(str) {
+      const d = document.createElement("div");
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    // ── Toggle status (teacher) ───────────────────────────
     async function toggleStatus(id) {
       const res = await fetch("/api/rooms/" + id + "/toggle", { method: "POST" });
+      if (res.status === 403) { alert("Teacher access required."); return; }
       const updated = await res.json();
       const room = rooms.find(r => r.id === id);
       room.status = updated.status;
@@ -340,7 +571,7 @@
       showDrawer(room);
     }
 
-    // ── 8. Add schedule ─────────────────────────────────────
+    // ── Add schedule (teacher) ────────────────────────────
     async function addSchedule(e) {
       e.preventDefault();
       const payload = {
@@ -353,6 +584,7 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+      if (res.status === 403) { alert("Teacher access required."); return; }
       const updated = await res.json();
       const room = rooms.find(r => r.id === selectedRoomId);
       room.schedules = updated.schedules;
@@ -362,30 +594,56 @@
       showDrawer(room);
     }
 
-    // ── 9. Private notes (localStorage) ─────────────────────
+    // ── Public notes (teacher write, all read) ────────────
+    async function addPublicNote(roomId) {
+      const text = document.getElementById("public-note-text").value.trim();
+      if (!text) return;
+      const res = await fetch("/api/rooms/" + roomId + "/public-notes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      if (res.status === 403) { alert("Teacher access required."); return; }
+      publicNotesCache[roomId] = await res.json();
+      showDrawer(rooms.find(r => r.id === roomId));
+    }
+
+    async function deletePublicNote(roomId, index) {
+      const res = await fetch("/api/rooms/" + roomId + "/public-notes/" + index, { method: "DELETE" });
+      if (res.status === 403) { alert("Teacher access required."); return; }
+      publicNotesCache[roomId] = await res.json();
+      showDrawer(rooms.find(r => r.id === roomId));
+    }
+
+    // ── Private notes (localStorage, scoped by role) ─────
+    function noteKey() {
+      return "note_" + currentUser.role + "_" + selectedRoomId;
+    }
+
     function saveNote() {
       if (!selectedRoomId) return;
-      localStorage.setItem("note_" + selectedRoomId, document.getElementById("note-text").value);
+      localStorage.setItem(noteKey(), document.getElementById("note-text").value);
       document.getElementById("note-status").textContent = "✅ Note saved!";
       renderNoteDots();
     }
 
     function deleteNote() {
       if (!selectedRoomId) return;
-      localStorage.removeItem("note_" + selectedRoomId);
+      localStorage.removeItem(noteKey());
       document.getElementById("note-text").value = "";
       document.getElementById("note-status").textContent = "🗑️ Note deleted.";
       renderNoteDots();
     }
 
-    // ── 10. Yellow dots for rooms with notes ────────────────
+    // ── Yellow dots for rooms with notes ──────────────────
     function renderNoteDots() {
       document.querySelectorAll(".note-dot").forEach(el => el.remove());
       const svg = document.querySelector("#map-container svg");
       if (!svg) return;
 
       ROOM_IDS.forEach(id => {
-        if (!localStorage.getItem("note_" + id)) return;
+        const key = "note_" + currentUser.role + "_" + id;
+        if (!localStorage.getItem(key)) return;
         const rect = document.getElementById(id);
         if (!rect) return;
 
