@@ -11,119 +11,153 @@
     /* ── Top banner ───────────────────────────────────────── */
     .top-bar {
       background: linear-gradient(180deg, #8b0000 0%, #5c0000 100%);
-      padding: 0.8rem 2rem;
+      padding: 0.7rem 1.2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
     }
-    .top-bar h1 { color: #fff; font-size: 1.2rem; }
-    .top-bar .user-info { display: flex; align-items: center; gap: 12px; }
-    .top-bar .user-info span { color: #ddd; font-size: 0.85rem; }
-    .top-bar .role-badge {
-      background: #ffc107; color: #5c0000; padding: 3px 10px;
-      border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase;
-    }
-    .top-bar .btn-logout {
-      background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);
-      padding: 5px 14px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
-      transition: background 0.2s;
-    }
-    .top-bar .btn-logout:hover { background: rgba(255,255,255,0.3); }
+    .top-bar h1 { color: #fff; font-size: clamp(0.9rem, 2.5vw, 1.15rem); }
+    .top-bar span { color: #ddd; font-size: 0.8rem; }
 
     /* ── Nav bar ──────────────────────────────────────────── */
     .nav-bar {
       background: #2b0000;
-      padding: 0.5rem 2rem;
+      padding: 0.4rem 1.2rem;
       border-bottom: 3px solid #ffc107;
       color: #ccc;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
     }
 
-    /* ── Page heading ─────────────────────────────────────── */
+    /* ── Page heading + floor buttons ────────────────────── */
     .page-heading {
       background: #fff;
-      padding: 0.7rem 2rem;
+      padding: 0.55rem 1.2rem;
       border-bottom: 2px solid #8b0000;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
-    .page-heading h2 { font-size: 1.05rem; color: #8b0000; }
+    .page-heading h2 { font-size: clamp(0.85rem, 2vw, 1rem); color: #8b0000; }
 
-    /* ── Layout ───────────────────────────────────────────── */
+    .floor-btns { display: flex; gap: 0.4rem; flex-shrink: 0; }
+    .floor-btn {
+      padding: 7px 16px;
+      border: 2px solid #8b0000;
+      border-radius: 20px;
+      font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+      font-weight: 700;
+      cursor: pointer;
+      background: #fff;
+      color: #8b0000;
+      transition: all 0.2s;
+      white-space: nowrap;
+      /* touch-friendly */
+      min-height: 38px;
+    }
+    .floor-btn.active { background: #8b0000; color: #fff; }
+    .floor-btn:hover:not(.active) { background: #ffc107; border-color: #ffc107; color: #5c0000; }
+
+    /* ── Main layout: side-by-side on desktop, stacked on mobile ── */
     .main {
       display: flex;
-      gap: 1.2rem;
-      padding: 1.2rem 2rem;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
       align-items: flex-start;
+    }
+
+    /* ── Left column (map + legend) ──────────────────────── */
+    .map-col {
+      flex: 1;
+      min-width: 0; /* prevents overflow */
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
     /* ── Map ──────────────────────────────────────────────── */
     .map-container {
-      flex: 1;
       background: #fff;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 0.8rem;
       border: 1px solid #ccc;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .map-container svg { width: 100%; height: auto; display: block; }
 
     /* ── Legend ───────────────────────────────────────────── */
     .legend {
       display: flex;
-      gap: 1.2rem;
-      margin-top: 0.8rem;
-      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      font-size: 0.75rem;
       color: #555;
     }
     .legend span { display: flex; align-items: center; gap: 5px; }
-    .legend-dot {
-      width: 14px; height: 14px; border-radius: 3px; display: inline-block;
-    }
+    .ldot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; flex-shrink: 0; }
 
     /* ── Side panel ──────────────────────────────────────── */
     .side-panel {
-      width: 370px;
+      width: 300px;
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     /* ── Search ───────────────────────────────────────────── */
     .search-box {
       width: 100%;
-      padding: 10px 14px;
+      padding: 10px 13px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
       background: #fff;
+      /* touch-friendly */
+      min-height: 42px;
     }
     .search-box:focus { border-color: #8b0000; outline: none; }
 
-    /* ── Room cards grid ─────────────────────────────────── */
-    .cards { display: flex; flex-direction: column; gap: 0.6rem; }
+    /* ── Room cards ──────────────────────────────────────── */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+    .cards::-webkit-scrollbar { width: 5px; }
+    .cards::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 
     .card {
       background: #fff;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-radius: 8px;
       border-left: 6px solid #ef4444;
       box-shadow: 0 1px 3px rgba(0,0,0,.08);
       cursor: pointer;
       transition: box-shadow 0.15s;
+      /* touch-friendly */
+      min-height: 44px;
     }
-    .card:hover { box-shadow: 0 3px 10px rgba(0,0,0,.15); }
+    .card:hover, .card:active { box-shadow: 0 3px 10px rgba(0,0,0,.15); }
     .card.vacant { border-left-color: #10b981; }
     .card.selected { outline: 2px solid #8b0000; outline-offset: -2px; }
-    .card h3 { font-size: 0.95rem; margin: 0; }
-    .card .sub { font-size: 0.8rem; color: #6b7280; margin-top: 2px; }
+    .card h3 { font-size: clamp(0.8rem, 2vw, 0.9rem); margin: 0; }
+    .card .sub { font-size: 0.72rem; color: #6b7280; margin-top: 2px; }
     .badge {
       float: right;
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: bold;
+      margin-left: 4px;
     }
     .badge-occ { background: #fee2e2; color: #991b1b; }
     .badge-vac { background: #d1fae5; color: #065f46; }
@@ -131,49 +165,56 @@
     /* ── Detail drawer ───────────────────────────────────── */
     .drawer {
       background: #fff;
-      padding: 1.2rem;
+      padding: 1rem;
       border-radius: 8px;
       border: 1px solid #ccc;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
-      max-height: 70vh;
-      overflow-y: auto;
     }
-    .drawer h2 { color: #8b0000; font-size: 1rem; margin-bottom: 0.5rem; }
-    .drawer h3 { font-size: 0.9rem; color: #374151; margin: 0.8rem 0 0.3rem; }
-    .drawer hr { border: none; border-top: 1px solid #e5e7eb; margin: 0.8rem 0; }
-    .drawer ul { padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.7; }
-    .drawer .empty { color: #6b7280; font-size: 0.85rem; font-style: italic; }
+    .drawer h2 { color: #8b0000; font-size: clamp(0.85rem, 2vw, 0.95rem); margin-bottom: 0.3rem; }
+    .drawer .room-sub { font-size: 0.75rem; color: #6b7280; margin-bottom: 0.5rem; }
+    .drawer h3 {
+      font-size: 0.8rem; color: #374151;
+      margin: 0.65rem 0 0.3rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 3px;
+    }
+    .drawer ul { padding-left: 1rem; font-size: 0.78rem; line-height: 1.8; }
+    .drawer .empty { color: #6b7280; font-size: 0.78rem; font-style: italic; }
+    .drawer hr { border: none; border-top: 1px solid #e5e7eb; margin: 0.65rem 0; }
 
-    .drawer form { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-    .drawer input, .drawer textarea {
-      padding: 8px 10px;
+    .drawer form { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+    .drawer input {
+      padding: 9px 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 13px;
-      font-family: inherit;
+      min-height: 40px; /* touch-friendly */
+      width: 100%;
     }
-    .drawer input:focus, .drawer textarea:focus { border-color: #8b0000; outline: none; }
-    .drawer textarea { resize: vertical; min-height: 60px; }
+    .drawer input:focus { border-color: #8b0000; outline: none; }
 
     .btn {
-      padding: 8px 14px;
+      padding: 9px 14px;
       border: none;
       border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       transition: background 0.2s;
+      min-height: 40px; /* touch-friendly */
     }
     .btn-primary { background: #8b0000; color: #fff; width: 100%; }
     .btn-primary:hover { background: #5c0000; }
-    .btn-toggle { background: #374151; color: #fff; float: right; font-size: 0.75rem; padding: 5px 10px; }
+    .btn-toggle {
+      background: #374151; color: #fff;
+      float: right; font-size: 0.7rem;
+      padding: 5px 10px;
+      min-height: 32px;
+    }
     .btn-toggle:hover { background: #1f2937; }
-    .btn-sm { padding: 4px 10px; font-size: 0.75rem; }
-    .btn-danger { background: #ef4444; color: #fff; }
-    .btn-danger:hover { background: #dc2626; }
 
     /* ── Notes ────────────────────────────────────────────── */
-    .notes-section { margin-top: 0.6rem; }
+    .notes-section { margin-top: 0.5rem; }
     .notes-section textarea {
       width: 100%;
       height: 70px;
@@ -190,224 +231,175 @@
     .btn-note-save:hover { background: #5c0000; }
     .btn-note-del { background: #eee; color: #555; flex: 1; }
     .btn-note-del:hover { background: #c62828; color: #fff; }
-    .note-status { font-size: 0.75rem; color: #2e7d32; margin-top: 4px; min-height: 1em; }
-
-    /* ── Public note card ────────────────────────────────── */
-    .public-note {
-      background: #fffbeb;
-      border: 1px solid #fbbf24;
-      border-radius: 6px;
-      padding: 10px;
-      margin-bottom: 8px;
-      font-size: 0.83rem;
-    }
-    .public-note .note-meta {
-      font-size: 0.72rem;
-      color: #92400e;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .public-note .note-text { color: #451a03; line-height: 1.5; }
-
-    /* ── Login screen ────────────────────────────────────── */
-    .login-screen {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #5c0000 0%, #8b0000 50%, #2b0000 100%);
-    }
-    .login-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,.3);
-      text-align: center;
-      max-width: 440px;
-      width: 90%;
-    }
-    .login-card h1 { color: #8b0000; font-size: 1.6rem; margin-bottom: 0.3rem; }
-    .login-card p { color: #6b7280; font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .login-card .name-input {
-      width: 100%;
-      padding: 12px 16px;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-bottom: 1.2rem;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-    .login-card .name-input:focus { border-color: #8b0000; outline: none; }
-    .login-card .role-buttons { display: flex; gap: 1rem; }
-    .role-btn {
-      flex: 1;
-      padding: 1.2rem 1rem;
-      border: 2px solid #e5e7eb;
-      border-radius: 12px;
-      background: #fff;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: center;
-    }
-    .role-btn:hover { border-color: #8b0000; background: #fef2f2; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(139,0,0,.15); }
-    .role-btn .icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
-    .role-btn .label { font-weight: 700; font-size: 1rem; color: #1f2937; display: block; }
-    .role-btn .desc { font-size: 0.75rem; color: #6b7280; display: block; margin-top: 4px; }
-    .login-error { color: #ef4444; font-size: 0.8rem; margin-bottom: 1rem; min-height: 1.2em; }
+    .note-status { font-size: 0.72rem; color: #2e7d32; margin-top: 4px; min-height: 1em; }
 
     .hidden { display: none; }
     .note-dot { pointer-events: none; }
+
+    /* ════════════════════════════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+       ════════════════════════════════════════════════════════ */
+
+    /* Tablet (≤ 900px): side panel goes below map */
+    @media (max-width: 900px) {
+      .main {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      .map-col { width: 100%; }
+      .side-panel {
+        width: 100%;
+      }
+      .cards {
+        /* On tablet show more cards since side panel is full-width */
+        max-height: 220px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.4rem;
+      }
+    }
+
+    /* Mobile (≤ 600px): compact everything */
+    @media (max-width: 600px) {
+      .top-bar { padding: 0.6rem 1rem; }
+      .top-bar h1 { font-size: 0.95rem; }
+      .top-bar span { display: none; } /* hide greeting on tiny screens */
+
+      .nav-bar { padding: 0.35rem 1rem; font-size: 0.72rem; }
+
+      .page-heading { padding: 0.5rem 1rem; }
+      .floor-btn { padding: 6px 12px; font-size: 0.72rem; min-height: 36px; }
+
+      .main { padding: 0.6rem; gap: 0.6rem; }
+
+      .map-container { padding: 0.5rem; }
+
+      .legend { font-size: 0.68rem; gap: 0.4rem 0.8rem; }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+        max-height: 200px;
+      }
+
+      .card { padding: 8px 10px; }
+      .card h3 { font-size: 0.8rem; }
+
+      .drawer { padding: 0.8rem; }
+
+      .btn { font-size: 0.78rem; min-height: 42px; } /* bigger tap targets */
+      .btn-toggle { float: none; display: block; width: 100%; margin-bottom: 0.5rem; }
+    }
+
+    /* Very small phones (≤ 380px) */
+    @media (max-width: 380px) {
+      .floor-btns { gap: 0.3rem; }
+      .floor-btn { padding: 5px 10px; font-size: 0.68rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════ LOGIN SCREEN ═══════════ -->
-  <div id="login-screen" class="login-screen">
-    <div class="login-card">
-      <h1>🏫 MSEUF CET Navigator</h1>
-      <p>Room Availability & Schedule Tracker</p>
-      <input class="name-input" type="text" id="login-name" placeholder="Enter your name..." />
-      <div class="login-error" id="login-error"></div>
-      <p style="font-size:0.85rem; color:#374151; margin-bottom:0.8rem; font-weight:600;">I am a…</p>
-      <div class="role-buttons">
-        <button class="role-btn" onclick="doLogin('teacher')">
-          <span class="icon">👨‍🏫</span>
-          <span class="label">Teacher</span>
-          <span class="desc">Manage rooms, schedules & post reminders</span>
-        </button>
-        <button class="role-btn" onclick="doLogin('student')">
-          <span class="icon">🎓</span>
-          <span class="label">Student</span>
-          <span class="desc">View schedules, rooms & teacher reminders</span>
-        </button>
-      </div>
+  <div class="top-bar">
+    <h1>🏫 MSEUF CET Building Navigator</h1>
+    <span>Good day! :)</span>
+  </div>
+  <div class="nav-bar">Real-Time Room Availability &amp; Schedule Tracker</div>
+  <div class="page-heading">
+    <h2>⏱ Room Status Overview</h2>
+    <div class="floor-btns">
+      <button class="floor-btn active" id="btn-ground" onclick="switchFloor('ground')">🏠 Ground Floor</button>
+      <button class="floor-btn" id="btn-second" onclick="switchFloor('second')">🏢 2nd Floor</button>
     </div>
   </div>
 
-  <!-- ═══════════ MAIN APP (hidden until login) ═══════════ -->
-  <div id="app-screen" class="hidden">
-    <div class="top-bar">
-      <h1>🏫 MSEUF CET Building Navigator</h1>
-      <div class="user-info">
-        <span id="user-greeting"></span>
-        <span class="role-badge" id="role-badge"></span>
-        <button class="btn-logout" onclick="doLogout()">Logout</button>
-      </div>
-    </div>
-    <div class="nav-bar">Real-Time Room Availability &amp; Schedule Tracker</div>
-    <div class="page-heading">
-      <h2>⏱ Room Status Overview</h2>
-      <div class="legend">
-        <span><span class="legend-dot" style="background:#ef4444;"></span> Occupied</span>
-        <span><span class="legend-dot" style="background:#10b981;"></span> Vacant</span>
-        <span><span class="legend-dot" style="background:#ffc107; border:1px solid #8b0000;"></span> Has Notes</span>
-      </div>
-    </div>
-
-    <div class="main">
-      <!-- ── Map ──────────────────────────────────────── -->
+  <div class="main">
+    <!-- ── Map ──────────────────────────────────────── -->
+    <div class="map-col">
       <div class="map-container" id="map-container"></div>
-
-      <!-- ── Side panel ───────────────────────────────── -->
-      <div class="side-panel">
-        <input class="search-box" type="text" id="search" placeholder="Search rooms (e.g., CpE Lab, CET 101)..." />
-        <div class="cards" id="card-list"></div>
-        <div class="drawer hidden" id="drawer"></div>
+      <div class="legend">
+        <span><span class="ldot" style="background:#ef4444;"></span> Occupied</span>
+        <span><span class="ldot" style="background:#10b981;"></span> Vacant</span>
+        <span><span class="ldot" style="background:#ffc107; border:1px solid #8b0000;"></span> Has Notes</span>
+        <span><span class="ldot" style="background:gray;"></span> Unknown</span>
       </div>
+    </div>
+
+    <!-- ── Side panel ───────────────────────────────── -->
+    <div class="side-panel">
+      <input class="search-box" type="text" id="search" placeholder="Search rooms (e.g., CET 101, Physics Lab)..." />
+      <div class="cards" id="card-list"></div>
+      <div class="drawer hidden" id="drawer"></div>
     </div>
   </div>
 
   <script>
-    // ── State ──────────────────────────────────────────────
-    let rooms = [];
+    let allRooms = [];
+    let currentFloor = "ground";
     let selectedRoomId = null;
-    let currentUser = null; // { role, name }
-    let publicNotesCache = {}; // room_id -> [notes]
-    const ROOM_IDS = ["cpe-lab", "cet-101", "cet-102", "circuits-lab", "deans-office"];
+
+    const FLOOR_ROOM_IDS = {
+      ground: [
+        "machine-shop","cet-117","cet-118","cet-119","cet-121","cet-122","cet-123","cet-124",
+        "cet-116","cet-115","faculty-tech","cet-114","soil-lab","sto","deans-office",
+        "cet-120","cet-113","cet-112","cet-111","cet-110","cet-109",
+        "faculty-rm","cet-105","cet-106","cet-107","cet-108",
+        "faculty-cba","deans-cba","cet-104",
+        "rba-hall","san-lorenzo","cet-103","cet-102","cet-101","garage"
+      ],
+      second: [
+        "emrc-ii","cet-213","cet-214","cet-215","cet-216","cet-217","accounting",
+        "control-room","cet-212","cet-211",
+        "cet-208","cet-207","cet-206","office-sim",
+        "cet-210","cet-209","nutrition-lab",
+        "cet-204","cet-203","cet-202","cet-201","counseling"
+      ]
+    };
+
     const OCCUPIED_COLOR = "#ef4444";
     const VACANT_COLOR   = "#10b981";
-    const SELECTED_STROKE = "#ffc107";
+    const UNKNOWN_COLOR  = "gray";
 
-    // ── Auth ──────────────────────────────────────────────
-    async function checkSession() {
-      const res = await fetch("/api/me");
-      const data = await res.json();
-      if (data.logged_in) {
-        currentUser = { role: data.role, name: data.name };
-        showApp();
-      }
+    // ── 1. Init ─────────────────────────────────────────────
+    async function init() {
+      const res = await fetch("/api/rooms");
+      allRooms = await res.json();
+      await loadFloor(currentFloor);
     }
-    checkSession();
+    init();
 
-    async function doLogin(role) {
-      const name = document.getElementById("login-name").value.trim();
-      const errEl = document.getElementById("login-error");
-      if (!name) { errEl.textContent = "Please enter your name."; return; }
-      errEl.textContent = "";
-
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ role, name }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        currentUser = { role: data.role, name: data.name };
-        showApp();
-      } else {
-        errEl.textContent = data.error || "Login failed.";
-      }
-    }
-
-    async function doLogout() {
-      await fetch("/api/logout", { method: "POST" });
-      currentUser = null;
+    // ── 2. Floor switching ───────────────────────────────────
+    async function switchFloor(floor) {
+      if (floor === currentFloor) return;
+      currentFloor = floor;
       selectedRoomId = null;
-      document.getElementById("app-screen").classList.add("hidden");
-      document.getElementById("login-screen").classList.remove("hidden");
-      document.getElementById("login-name").value = "";
+      document.getElementById("btn-ground").classList.toggle("active", floor === "ground");
+      document.getElementById("btn-second").classList.toggle("active", floor === "second");
+      document.getElementById("drawer").classList.add("hidden");
+      await loadFloor(floor);
     }
 
-    // ── Show App ──────────────────────────────────────────
-    async function showApp() {
-      document.getElementById("login-screen").classList.add("hidden");
-      document.getElementById("app-screen").classList.remove("hidden");
-      document.getElementById("user-greeting").textContent = `Hello, ${currentUser.name}!`;
-      document.getElementById("role-badge").textContent = currentUser.role;
-
-      const [roomsRes] = await Promise.all([
-        fetch("/api/rooms").then(r => r.json()),
-        fetch("/static/campus_map.svg").then(r => r.text()).then(svg => {
-          document.getElementById("map-container").innerHTML = svg;
-        }),
-      ]);
-      rooms = roomsRes;
+    async function loadFloor(floor) {
+      const svgFile = floor === "ground" ? "/static/ground_floor.svg" : "/static/second_floor.svg";
+      const svgText = await fetch(svgFile).then(r => r.text());
+      document.getElementById("map-container").innerHTML = svgText;
       wireMapClicks();
-      renderCards();
       colorMapRooms();
       renderNoteDots();
+      renderCards();
     }
 
-    // ── Helpers ───────────────────────────────────────────
-    function isTeacher() { return currentUser && currentUser.role === "teacher"; }
-
-    // ── Search ────────────────────────────────────────────
-    document.getElementById("search").addEventListener("input", renderCards);
-
-    // ── Render room cards ─────────────────────────────────
+    // ── 3. Cards ─────────────────────────────────────────────
     function renderCards() {
       const query = document.getElementById("search").value.toLowerCase();
-      const list = document.getElementById("card-list");
+      const list  = document.getElementById("card-list");
       list.innerHTML = "";
 
-      rooms
+      floorRooms()
         .filter(r => r.code.toLowerCase().includes(query) || r.name.toLowerCase().includes(query))
         .forEach(room => {
-          const card = document.createElement("div");
           const isVacant = room.status === "Vacant";
+          const card = document.createElement("div");
           card.className = `card ${isVacant ? "vacant" : ""} ${room.id === selectedRoomId ? "selected" : ""}`;
           card.onclick = () => selectRoom(room.id);
           card.innerHTML = `
@@ -419,124 +411,70 @@
         });
     }
 
-    // ── Map interactions ──────────────────────────────────
+    document.getElementById("search").addEventListener("input", renderCards);
+
+    // ── 4. Map interactions ──────────────────────────────────
     function wireMapClicks() {
-      ROOM_IDS.forEach(id => {
+      FLOOR_ROOM_IDS[currentFloor].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener("click", () => selectRoom(id));
       });
     }
 
     function colorMapRooms() {
-      rooms.forEach(room => {
-        const el = document.getElementById(room.id);
+      FLOOR_ROOM_IDS[currentFloor].forEach(id => {
+        const el  = document.getElementById(id);
         if (!el) return;
-        el.setAttribute("fill", room.status === "Vacant" ? VACANT_COLOR : OCCUPIED_COLOR);
-        el.setAttribute("stroke", room.id === selectedRoomId ? SELECTED_STROKE : "#5c0000");
-        el.setAttribute("stroke-width", room.id === selectedRoomId ? "4" : "2");
+        const room = allRooms.find(r => r.id === id);
+        const fill = !room ? UNKNOWN_COLOR
+                   : room.status === "Vacant" ? VACANT_COLOR : OCCUPIED_COLOR;
+        el.setAttribute("fill", fill);
+        el.setAttribute("stroke", id === selectedRoomId ? "#ffc107" : "#5c0000");
+        el.setAttribute("stroke-width", id === selectedRoomId ? "4" : "1.5");
       });
     }
 
-    // ── Select a room ─────────────────────────────────────
-    async function selectRoom(id) {
+    // ── 5. Select room ───────────────────────────────────────
+    function selectRoom(id) {
       selectedRoomId = id;
-      const room = rooms.find(r => r.id === id);
+      const room = allRooms.find(r => r.id === id);
       colorMapRooms();
       renderCards();
-
-      // Fetch public notes for this room
-      try {
-        const res = await fetch("/api/rooms/" + id + "/public-notes");
-        publicNotesCache[id] = await res.json();
-      } catch { publicNotesCache[id] = []; }
-
-      showDrawer(room);
+      if (room) showDrawer(room);
     }
 
-    // ── Detail drawer ─────────────────────────────────────
+    // ── 6. Drawer ────────────────────────────────────────────
     function showDrawer(room) {
       const drawer = document.getElementById("drawer");
       drawer.classList.remove("hidden");
 
-      const scheduleHTML = room.schedules.length === 0
-        ? '<p class="empty">No ongoing classes. Room is currently free.</p>'
+      const schedHTML = room.schedules.length === 0
+        ? '<p class="empty">No classes scheduled. Room is free.</p>'
         : "<ul>" + room.schedules.map(s =>
             `<li><strong>${s.time}</strong> — ${s.subject} (${s.prof})</li>`
           ).join("") + "</ul>";
 
-      const savedNote = localStorage.getItem("note_" + currentUser.role + "_" + room.id) || "";
+      const savedNote = localStorage.getItem("note_" + room.id) || "";
 
-      // Public notes
-      const pNotes = publicNotesCache[room.id] || [];
-      let publicNotesHTML = "";
-      if (pNotes.length === 0) {
-        publicNotesHTML = '<p class="empty">No reminders posted yet.</p>';
-      } else {
-        publicNotesHTML = pNotes.map((n, i) => `
-          <div class="public-note">
-            <div class="note-meta">
-              <span>📌 ${n.author} · ${n.timestamp}</span>
-              ${isTeacher() ? `<button class="btn btn-sm btn-danger" onclick="deletePublicNote('${room.id}', ${i})">✕</button>` : ""}
-            </div>
-            <div class="note-text">${escapeHtml(n.text)}</div>
-          </div>
-        `).join("");
-      }
+      drawer.innerHTML = `
+        <button class="btn btn-toggle" onclick="toggleStatus('${room.id}')">
+          Set as ${room.status === "Vacant" ? "Occupied" : "Vacant"}
+        </button>
+        <h2>${room.code}</h2>
+        <p class="room-sub">${room.name}</p>
 
-      // ── Build drawer based on role ──
-      let html = "";
-
-      // Toggle button (teacher only)
-      if (isTeacher()) {
-        html += `
-          <button class="btn btn-toggle" onclick="toggleStatus('${room.id}')">
-            Set as ${room.status === "Vacant" ? "Occupied" : "Vacant"}
-          </button>`;
-      }
-
-      // Room header + schedule (both roles)
-      html += `
-        <h2>${room.code} — Details</h2>
-        <p class="sub">${room.name}</p>
         <h3>📋 Today's Schedule</h3>
-        ${scheduleHTML}
-      `;
+        ${schedHTML}
 
-      // Add schedule form (teacher only)
-      if (isTeacher()) {
-        html += `
-          <hr />
-          <h3>➕ Add Class Schedule</h3>
-          <form onsubmit="addSchedule(event)">
-            <input type="text" id="inp-sub"  placeholder="Subject (e.g. CPE 421 - Microprocessors)" required />
-            <input type="text" id="inp-prof" placeholder="Instructor Name" required />
-            <input type="text" id="inp-time" placeholder="Time Slot (e.g. 01:00 PM - 03:00 PM)" required />
-            <button type="submit" class="btn btn-primary">Save Schedule</button>
-          </form>
-        `;
-      }
+        <hr />
+        <h3>➕ Add Schedule</h3>
+        <form onsubmit="addSchedule(event)">
+          <input type="text" id="inp-sub"  placeholder="Subject (e.g. CPE 421 - Microprocessors)" required />
+          <input type="text" id="inp-prof" placeholder="Instructor Name" required />
+          <input type="text" id="inp-time" placeholder="Time (e.g. 08:00 AM - 11:00 AM)" required />
+          <button type="submit" class="btn btn-primary">Save Schedule</button>
+        </form>
 
-      // Public notes section
-      html += `<hr />`;
-      if (isTeacher()) {
-        html += `
-          <h3>📢 Public Reminders</h3>
-          <p style="font-size:0.75rem; color:#6b7280; margin-bottom:6px;">Visible to all students</p>
-          ${publicNotesHTML}
-          <div style="margin-top:8px;">
-            <textarea id="public-note-text" placeholder="Write a reminder for students…" style="width:100%; min-height:60px; border:1px solid #ccc; border-radius:6px; padding:8px; font-family:inherit; font-size:0.8rem;"></textarea>
-            <button class="btn btn-primary" style="margin-top:6px;" onclick="addPublicNote('${room.id}')">Post Reminder</button>
-          </div>
-        `;
-      } else {
-        html += `
-          <h3>📢 Teacher Reminders</h3>
-          ${publicNotesHTML}
-        `;
-      }
-
-      // Private notes (both roles)
-      html += `
         <hr />
         <div class="notes-section">
           <h3>🔒 My Private Notes</h3>
@@ -548,30 +486,20 @@
           <div class="note-status" id="note-status"></div>
         </div>
       `;
-
-      drawer.innerHTML = html;
     }
 
-    // ── Escape HTML ───────────────────────────────────────
-    function escapeHtml(str) {
-      const d = document.createElement("div");
-      d.textContent = str;
-      return d.innerHTML;
-    }
-
-    // ── Toggle status (teacher) ───────────────────────────
+    // ── 7. Toggle status ─────────────────────────────────────
     async function toggleStatus(id) {
       const res = await fetch("/api/rooms/" + id + "/toggle", { method: "POST" });
-      if (res.status === 403) { alert("Teacher access required."); return; }
       const updated = await res.json();
-      const room = rooms.find(r => r.id === id);
+      const room = allRooms.find(r => r.id === id);
       room.status = updated.status;
       colorMapRooms();
       renderCards();
       showDrawer(room);
     }
 
-    // ── Add schedule (teacher) ────────────────────────────
+    // ── 8. Add schedule ──────────────────────────────────────
     async function addSchedule(e) {
       e.preventDefault();
       const payload = {
@@ -584,82 +512,60 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (res.status === 403) { alert("Teacher access required."); return; }
       const updated = await res.json();
-      const room = rooms.find(r => r.id === selectedRoomId);
+      const room = allRooms.find(r => r.id === selectedRoomId);
       room.schedules = updated.schedules;
-      room.status = updated.status;
+      room.status    = updated.status;
       colorMapRooms();
       renderCards();
       showDrawer(room);
     }
 
-    // ── Public notes (teacher write, all read) ────────────
-    async function addPublicNote(roomId) {
-      const text = document.getElementById("public-note-text").value.trim();
-      if (!text) return;
-      const res = await fetch("/api/rooms/" + roomId + "/public-notes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
-      if (res.status === 403) { alert("Teacher access required."); return; }
-      publicNotesCache[roomId] = await res.json();
-      showDrawer(rooms.find(r => r.id === roomId));
-    }
-
-    async function deletePublicNote(roomId, index) {
-      const res = await fetch("/api/rooms/" + roomId + "/public-notes/" + index, { method: "DELETE" });
-      if (res.status === 403) { alert("Teacher access required."); return; }
-      publicNotesCache[roomId] = await res.json();
-      showDrawer(rooms.find(r => r.id === roomId));
-    }
-
-    // ── Private notes (localStorage, scoped by role) ─────
-    function noteKey() {
-      return "note_" + currentUser.role + "_" + selectedRoomId;
-    }
-
+    // ── 9. Private notes ─────────────────────────────────────
     function saveNote() {
       if (!selectedRoomId) return;
-      localStorage.setItem(noteKey(), document.getElementById("note-text").value);
+      localStorage.setItem("note_" + selectedRoomId, document.getElementById("note-text").value);
       document.getElementById("note-status").textContent = "✅ Note saved!";
       renderNoteDots();
     }
 
     function deleteNote() {
       if (!selectedRoomId) return;
-      localStorage.removeItem(noteKey());
+      localStorage.removeItem("note_" + selectedRoomId);
       document.getElementById("note-text").value = "";
       document.getElementById("note-status").textContent = "🗑️ Note deleted.";
       renderNoteDots();
     }
 
-    // ── Yellow dots for rooms with notes ──────────────────
+    // ── 10. Yellow dots for rooms with notes ─────────────────
     function renderNoteDots() {
       document.querySelectorAll(".note-dot").forEach(el => el.remove());
       const svg = document.querySelector("#map-container svg");
       if (!svg) return;
 
-      ROOM_IDS.forEach(id => {
-        const key = "note_" + currentUser.role + "_" + id;
-        if (!localStorage.getItem(key)) return;
+      FLOOR_ROOM_IDS[currentFloor].forEach(id => {
+        if (!localStorage.getItem("note_" + id)) return;
         const rect = document.getElementById(id);
-        if (!rect) return;
+        if (!rect || rect.tagName !== "rect") return;
 
-        const x = parseFloat(rect.getAttribute("x")) + parseFloat(rect.getAttribute("width")) - 16;
-        const y = parseFloat(rect.getAttribute("y")) + 16;
+        const x = parseFloat(rect.getAttribute("x")) + parseFloat(rect.getAttribute("width")) - 14;
+        const y = parseFloat(rect.getAttribute("y")) + 14;
 
         const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         dot.setAttribute("cx", x);
         dot.setAttribute("cy", y);
-        dot.setAttribute("r", "8");
+        dot.setAttribute("r", "7");
         dot.setAttribute("fill", "#ffc107");
         dot.setAttribute("stroke", "#5c0000");
         dot.setAttribute("stroke-width", "1.5");
         dot.classList.add("note-dot");
         svg.appendChild(dot);
       });
+    }
+
+    // ── Helper ───────────────────────────────────────────────
+    function floorRooms() {
+      return allRooms.filter(r => r.floor === currentFloor);
     }
   </script>
 </body>
