@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" height="530">
+  <rect width="900" height="530" fill="#fafafa" stroke="#8b0000" stroke-width="2" rx="4"/>
+  <text x="450" y="20" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#8b0000">CET Second Floor Plan</text>
+
+  <!-- ═══ TOP ROW: EMRC II → CET 217 ═══ -->
+  <rect id="emrc-ii" x="10" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="55" text-anchor="middle" font-family="sans-serif" font-size="8" fill="white" pointer-events="none">EMRC II</text>
+
+  <rect id="cet-213" x="93" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="132" y="62" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 213</text>
+
+  <rect id="cet-214" x="176" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="215" y="62" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 214</text>
+
+  <!-- Door gap at ~257 -->
+  <rect x="256" y="28" width="14" height="60" fill="#fafafa" stroke="none"/>
+
+  <rect id="cet-215" x="274" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="313" y="62" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 215</text>
+
+  <rect id="cet-216" x="357" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="396" y="62" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 216</text>
+
+  <rect id="cet-217" x="440" y="28" width="78" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="479" y="62" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 217</text>
+
+  <!-- Accounting Clinic (right side) -->
+  <rect id="accounting" x="600" y="28" width="115" height="38" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="657" y="45" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Accounting</text>
+  <text x="657" y="57" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Clinic</text>
+
+  <!-- FIRE EXIT label -->
+  <text x="735" y="78" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c00" font-weight="bold">🚪 FIRE EXIT</text>
+
+  <!-- ═══ LEFT COLUMN ═══ -->
+  <rect id="control-room" x="10" y="95" width="78" height="32" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="107" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">Control</text>
+  <text x="49" y="118" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">Room</text>
+
+  <rect id="cet-212" x="10" y="132" width="78" height="88" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="180" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 212</text>
+
+  <rect id="cet-211" x="10" y="225" width="78" height="88" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="273" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 211</text>
+
+  <!-- ═══ OPEN COURTYARD (center) ═══ -->
+  <rect x="95" y="95" width="355" height="220" fill="#eaf4ea" stroke="#bbb" stroke-width="1.5" stroke-dasharray="6,3" rx="5"/>
+  <text x="272" y="210" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#aaa">Open Courtyard</text>
+
+  <!-- ═══ MIDDLE ROW: CET 208, 207, 206, Office Sim ═══ -->
+  <rect id="cet-208" x="95" y="320" width="88" height="82" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="139" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 208</text>
+
+  <rect id="cet-207" x="188" y="320" width="88" height="82" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="232" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 207</text>
+
+  <rect id="cet-206" x="281" y="320" width="88" height="82" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="325" y="365" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 206</text>
+
+  <rect id="office-sim" x="374" y="320" width="115" height="82" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="431" y="356" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Office</text>
+  <text x="431" y="368" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Simulation</text>
+  <text x="431" y="380" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Room</text>
+
+  <!-- ═══ LOWER LEFT: CET 210, 209, Nutrition Lab ═══ -->
+  <rect id="cet-210" x="10" y="320" width="78" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="344" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="white" pointer-events="none">CET 210</text>
+  <text x="49" y="356" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">CBA-DSC</text>
+
+  <rect id="cet-209" x="10" y="387" width="78" height="88" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="435" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 209</text>
+
+  <rect id="nutrition-lab" x="10" y="480" width="78" height="45" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="49" y="496" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Nutrition</text>
+  <text x="49" y="508" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Laboratory</text>
+
+  <!-- ═══ RIGHT: CR(M), CR(F), CET 204 ═══ -->
+  <rect x="495" y="320" width="75" height="38" fill="#ddd" stroke="#aaa" stroke-width="1" rx="3"/>
+  <text x="532" y="343" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#555">CR (M)</text>
+
+  <rect x="495" y="362" width="75" height="38" fill="#ddd" stroke="#aaa" stroke-width="1" rx="3"/>
+  <text x="532" y="385" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#555">CR (F)</text>
+
+  <rect id="cet-204" x="495" y="405" width="75" height="82" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="532" y="450" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 204</text>
+
+  <!-- ═══ BOTTOM ROW: CET 203, 202, 201, Counseling ═══ -->
+  <rect id="cet-203" x="355" y="455" width="78" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="394" y="491" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 203</text>
+
+  <rect id="cet-202" x="438" y="455" width="78" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="477" y="491" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 202</text>
+
+  <rect id="cet-201" x="521" y="455" width="78" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="560" y="491" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 201</text>
+
+  <rect id="counseling" x="604" y="455" width="95" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="651" y="485" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Counseling</text>
+  <text x="651" y="498" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Room</text>
+
+  <!-- FIRE EXIT bottom right -->
+  <text x="740" y="500" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c00" font-weight="bold">🚪 FIRE EXIT</text>
+</svg>

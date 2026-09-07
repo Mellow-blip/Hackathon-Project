@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 740" width="960" height="740">
+  <!-- Background -->
+  <rect width="960" height="740" fill="#fafafa" stroke="#8b0000" stroke-width="2" rx="4"/>
+  <text x="480" y="19" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#8b0000">CET Ground Floor Plan</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOP ROW  –  Machine Shop → CET 124
+       y=26, h=62
+       ═══════════════════════════════════════════════════════ -->
+  <rect id="machine-shop" x="10"  y="26" width="88"  height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="54"  y="52" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Machine</text>
+  <text x="54"  y="63" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Shop</text>
+
+  <rect id="cet-117"  x="103" y="26" width="94"  height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="150" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 117</text>
+
+  <!-- CR(F) / CR(M) between 117 and 118 -->
+  <rect x="200" y="26" width="22" height="30" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="211" y="44" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">CR(F)</text>
+  <rect x="200" y="58" width="22" height="30" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="211" y="74" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">CR(M)</text>
+
+  <rect id="cet-118"  x="225" y="26" width="110" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="280" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 118</text>
+
+  <rect id="cet-119"  x="340" y="26" width="110" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="395" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 119</text>
+
+  <!-- CR(F) / CR(M) between 119 and 121 -->
+  <rect x="453" y="26" width="22" height="30" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="464" y="44" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">CR(F)</text>
+  <rect x="453" y="58" width="22" height="30" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="464" y="74" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">CR(M)</text>
+
+  <rect id="cet-121"  x="478" y="26" width="108" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="532" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 121</text>
+
+  <rect id="cet-122"  x="591" y="26" width="108" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="645" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 122</text>
+
+  <rect id="cet-123"  x="704" y="26" width="108" height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="758" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 123</text>
+
+  <rect id="cet-124"  x="817" y="26" width="90"  height="62" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="862" y="61" text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 124</text>
+
+  <!-- EXIT label below Machine Shop / CET 117 -->
+  <text x="55" y="101" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#8b0000" font-weight="bold">▼ EXIT</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       LEFT VERTICAL WING
+       ═══════════════════════════════════════════════════════ -->
+  <rect id="cet-116" x="10" y="96"  width="100" height="72" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="60" y="136" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 116</text>
+
+  <rect id="cet-115" x="10" y="173" width="100" height="72" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="60" y="213" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 115</text>
+
+  <rect id="faculty-tech" x="10" y="250" width="100" height="38" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="60" y="264" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">FACULTY</text>
+  <text x="60" y="275" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Teck Dept.</text>
+
+  <!-- CET 114 is wider than 116/115 -->
+  <rect id="cet-114" x="10" y="293" width="120" height="88" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="70" y="332" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 114</text>
+  <text x="70" y="346" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Hydraulics Lab</text>
+
+  <!-- Soil Lab / STO / Dean's Office (side by side below CET 114) -->
+  <rect id="soil-lab" x="10" y="386" width="68" height="60" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="44" y="410" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Soil</text>
+  <text x="44" y="422" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">Laboratory</text>
+
+  <rect id="sto" x="83" y="386" width="47" height="28" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="106" y="404" text-anchor="middle" font-family="sans-serif" font-size="8" fill="white" pointer-events="none">STO</text>
+
+  <rect id="deans-office" x="83" y="418" width="47" height="28" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="106" y="429" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">Dean's</text>
+  <text x="106" y="440" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">Office</text>
+
+  <!-- College of Engineering Office (thin non-clickable strip) -->
+  <rect x="10" y="451" width="150" height="22" rx="2" fill="#d8d8d8" stroke="#aaa" stroke-width="1"/>
+  <text x="85" y="462" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#444">College of Engineering Office  |  CR</text>
+
+  <!-- Faculty RM (Engineering) -->
+  <rect id="faculty-rm" x="10" y="478" width="150" height="68" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="85" y="507" text-anchor="middle" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="white" pointer-events="none">FACULTY RM</text>
+  <text x="85" y="519" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">College of Engineering</text>
+
+  <!-- Staircase indicator (hatched) inside Faculty RM area -->
+  <rect x="12" y="519" width="30" height="25" fill="#bbb" stroke="#777" stroke-width="1" rx="2"/>
+  <line x1="12" y1="519" x2="42" y2="544" stroke="#777" stroke-width="1"/>
+  <line x1="12" y1="524" x2="42" y2="544" stroke="#777" stroke-width="0.5"/>
+
+  <!-- ENTRANCE label -->
+  <text x="163" y="558" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#8b0000" font-weight="bold">▼ ENTRANCE</text>
+
+  <!-- Faculty RM CBA -->
+  <rect id="faculty-cba" x="10" y="564" width="120" height="50" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="70" y="583" text-anchor="middle" font-family="sans-serif" font-size="7.5" font-weight="bold" fill="white" pointer-events="none">FACULTY RM</text>
+  <text x="70" y="595" text-anchor="middle" font-family="sans-serif" font-size="7" fill="white" pointer-events="none">CBA</text>
+
+  <!-- Deans Office (CBA) + CBA Office side by side -->
+  <rect id="deans-cba" x="10" y="619" width="68" height="38" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="44" y="632" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">DEANS</text>
+  <text x="44" y="643" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="white" pointer-events="none">OFFICE</text>
+
+  <rect x="82"  y="619" width="50" height="38" rx="2" fill="#d8d8d8" stroke="#aaa" stroke-width="1"/>
+  <text x="107" y="640" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#444">CBA Office</text>
+
+  <!-- Stock Room (thin strip) -->
+  <rect x="10" y="661" width="120" height="18" rx="2" fill="#d8d8d8" stroke="#aaa" stroke-width="1"/>
+  <text x="70" y="673" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#444">Stock Sto.</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CET 120  –  large center room
+       ═══════════════════════════════════════════════════════ -->
+  <rect id="cet-120" x="200" y="96" width="195" height="138" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="297" y="162" text-anchor="middle" font-family="sans-serif" font-size="13" fill="white" pointer-events="none">CET 120</text>
+
+  <!-- Open area right of CET 120 (with trees on plan) -->
+  <rect x="400" y="96" width="460" height="138" fill="#eaf4ea" stroke="#ccc" stroke-width="1" stroke-dasharray="5,3" rx="3"/>
+  <text x="630" y="170" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#aaa">Open Area</text>
+
+  <!-- Dotted corridor line (as seen in original plan) -->
+  <line x1="200" y1="244" x2="860" y2="244" stroke="#5c0000" stroke-width="1" stroke-dasharray="6,3"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PHYSICS LAB ROW  –  CET 113 → CET 109
+       y=247, h=76
+       ═══════════════════════════════════════════════════════ -->
+  <rect id="cet-113" x="200" y="247" width="89"  height="76" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="244" y="279" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="white" pointer-events="none">CET 113</text>
+  <text x="244" y="291" text-anchor="middle" font-family="sans-serif" font-size="7"   fill="white" pointer-events="none">Physics Lab</text>
+
+  <!-- Small Physics Lab label area left of CET 113 (visible in original) -->
+  <rect x="135" y="247" width="62" height="38" rx="2" fill="#d8d8d8" stroke="#aaa" stroke-width="1"/>
+  <text x="166" y="260" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">Physics</text>
+  <text x="166" y="270" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">Lab</text>
+  <rect x="135" y="287" width="62" height="36" rx="2" fill="#d8d8d8" stroke="#aaa" stroke-width="1"/>
+  <text x="166" y="308" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">Physics</text>
+  <text x="166" y="318" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#555">Lab</text>
+
+  <rect id="cet-112" x="294" y="247" width="89"  height="76" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="338" y="289" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 112</text>
+
+  <!-- UP / Stairs between 112 and 111 -->
+  <rect x="385" y="247" width="52" height="76" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="411" y="282" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#555">UP</text>
+  <!-- hatch lines for stairs -->
+  <line x1="385" y1="257" x2="437" y2="247" stroke="#bbb" stroke-width="0.8"/>
+  <line x1="385" y1="265" x2="437" y2="255" stroke="#bbb" stroke-width="0.8"/>
+  <line x1="385" y1="273" x2="437" y2="263" stroke="#bbb" stroke-width="0.8"/>
+  <line x1="385" y1="281" x2="437" y2="271" stroke="#bbb" stroke-width="0.8"/>
+  <line x1="385" y1="289" x2="437" y2="279" stroke="#bbb" stroke-width="0.8"/>
+
+  <rect id="cet-111" x="441" y="247" width="89"  height="76" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="485" y="289" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 111</text>
+
+  <rect id="cet-110" x="535" y="247" width="89"  height="76" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="579" y="289" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 110</text>
+
+  <rect id="cet-109" x="629" y="247" width="89"  height="76" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="673" y="289" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 109</text>
+
+  <!-- EXIT + To OSA AEC right of CET 109 -->
+  <text x="728" y="316" text-anchor="start" font-family="sans-serif" font-size="7" fill="#8b0000" font-weight="bold">EXIT →</text>
+  <text x="728" y="327" text-anchor="start" font-family="sans-serif" font-size="6.5" fill="#555">To OSA AEC</text>
+  <text x="728" y="337" text-anchor="start" font-family="sans-serif" font-size="6.5" fill="#555">Building →</text>
+
+  <!-- UP label between wings -->
+  <text x="445" y="352" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#666">UP</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OPEN AREA between Physics Lab row and CET 105-108
+       ═══════════════════════════════════════════════════════ -->
+  <rect x="200" y="332" width="530" height="112" fill="#eaf4ea" stroke="#ccc" stroke-width="1" stroke-dasharray="5,3" rx="3"/>
+  <text x="465" y="395" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#aaa">Open Area</text>
+
+  <!-- Dashed dotted corridor line (the blue dotted line in the original) -->
+  <line x1="200" y1="449" x2="645" y2="449" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="5,3"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CET 105 – CET 108 ROW
+       y=453, h=65
+       ═══════════════════════════════════════════════════════ -->
+  <rect id="cet-105" x="285" y="453" width="83" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="326" y="489" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 105</text>
+
+  <rect id="cet-106" x="373" y="453" width="83" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="414" y="489" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 106</text>
+
+  <rect id="cet-107" x="461" y="453" width="83" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="502" y="489" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 107</text>
+
+  <rect id="cet-108" x="549" y="453" width="83" height="65" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="590" y="489" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 108</text>
+
+  <!-- EXIT + To Canteen right of CET 108 -->
+  <text x="639" y="482" text-anchor="start" font-family="sans-serif" font-size="7" fill="#8b0000" font-weight="bold">EXIT</text>
+  <text x="639" y="493" text-anchor="start" font-family="sans-serif" font-size="6.5" fill="#555">To Canteen →</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CET 104 + CR(M) / CR(F)  (below Entrance area)
+       y=564
+       ═══════════════════════════════════════════════════════ -->
+  <!-- CR (M) and CR (F) in original are small and above CET 104 -->
+  <rect x="555" y="564" width="68" height="35" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="589" y="585" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#555">CR (M)</text>
+  <rect x="555" y="602" width="68" height="35" rx="2" fill="#e0e0e0" stroke="#aaa" stroke-width="1"/>
+  <text x="589" y="623" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#555">CR (F)</text>
+
+  <rect id="cet-104" x="463" y="564" width="88" height="75" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="507" y="605" text-anchor="middle" font-family="sans-serif" font-size="9" fill="white" pointer-events="none">CET 104</text>
+
+  <!-- Staircase indicator near CET 104 -->
+  <rect x="463" y="619" width="30" height="20" fill="#bbb" stroke="#777" stroke-width="1" rx="1"/>
+  <line x1="463" y1="619" x2="493" y2="639" stroke="#777" stroke-width="0.7"/>
+  <line x1="463" y1="624" x2="493" y2="639" stroke="#777" stroke-width="0.5"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       BOTTOM STRIP  –  RBA Hall → CET 101 → Garage
+       y=683, h=48
+       ═══════════════════════════════════════════════════════ -->
+
+  <!-- Thin road/separator above bottom strip -->
+  <rect x="183" y="681" width="2" height="48" fill="#8b0000"/>
+
+  <rect id="rba-hall"   x="185" y="683" width="255" height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="312"  y="711"  text-anchor="middle" font-family="sans-serif" font-size="11" fill="white" pointer-events="none">RBA Hall</text>
+
+  <rect id="san-lorenzo" x="445" y="683" width="158" height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="524"  y="702"  text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">San Lorenzo Ruiz</text>
+  <text x="524"  y="714"  text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="white" pointer-events="none">Study Area</text>
+
+  <rect id="cet-103" x="608" y="683" width="78"  height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="647"  y="711"  text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 103</text>
+
+  <rect id="cet-102" x="691" y="683" width="78"  height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="730"  y="711"  text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 102</text>
+
+  <rect id="cet-101" x="774" y="683" width="78"  height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="813"  y="711"  text-anchor="middle" font-family="sans-serif" font-size="9"   fill="white" pointer-events="none">CET 101</text>
+
+  <rect id="garage"  x="857" y="683" width="68"  height="48" rx="3" fill="gray" stroke="#5c0000" stroke-width="1.5" cursor="pointer"/>
+  <text x="891"  y="711"  text-anchor="middle" font-family="sans-serif" font-size="8"   fill="white" pointer-events="none">Garage</text>
+
+  <!-- ENTRANCE label at bottom -->
+  <text x="524" y="742" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#8b0000" font-weight="bold">▲ ENTRANCE</text>
+
+  <!-- To Admin Building label -->
+  <text x="5" y="562" text-anchor="start" font-family="sans-serif" font-size="6.5" fill="#555" transform="rotate(-90, 5, 562)">To Admin Building →</text>
+</svg>
